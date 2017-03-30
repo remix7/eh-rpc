@@ -30,7 +30,7 @@ public class SerializationUtil {
      * @param <T>
      * @return
      */
-    private static <T> Schema<T> getScheam(Class<T> cls) {
+    private static <T> Schema<T> getSchema(Class<T> cls) {
         Schema<T> schema = (Schema<T>) cachedSchema.get(cls);
         if (schema == null) {
             schema = RuntimeSchema.createFrom(cls);
@@ -53,7 +53,7 @@ public class SerializationUtil {
         Class<T> cls = (Class<T>) obj.getClass();
         LinkedBuffer buffer = LinkedBuffer.allocate(LinkedBuffer.DEFAULT_BUFFER_SIZE);
         try {
-            Schema<T> schema = getScheam(cls);
+            Schema<T> schema = getSchema(cls);
             return ProtostuffIOUtil.toByteArray(obj, schema, buffer);
 
         } catch (Exception e) {
@@ -73,7 +73,7 @@ public class SerializationUtil {
     public static <T> T deSerialize(byte[] bytes, Class<T> cls) {
         try {
             T message = objenesis.newInstance(cls);
-            Schema<T> schema = getScheam(cls);
+            Schema<T> schema = getSchema(cls);
             ProtostuffIOUtil.mergeFrom(bytes, message, schema);
             return message;
         } catch (Exception e) {

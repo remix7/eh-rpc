@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * -------------------------------------
- * TODO
+ * 注册服务
  * -------------------------------------
  * Created by liutao on 2017/3/30 0:21.
  */
