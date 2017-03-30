@@ -1,6 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="cn.echoes.rpc.simple.server"></context:component-scan>
+    <context:property-placeholder location="rpc.properties"></context:property-placeholder>
 
+    <bean id="registryServer" class="cn.echoes.rpc.registry.ServiceRegistry">
+        <constructor-arg name="registryAddress" value="${registry.address}"></constructor-arg>
+    </bean>
+
+    <bean id="rpcServer" class="cn.echoes.rpc.server.RpcServer">
+        <constructor-arg name="serverAddress" value="${server.address}"></constructor-arg>
+        <constructor-arg name="serviceRegistry" ref="registryServer"></constructor-arg>
+    </bean>
 </beans>

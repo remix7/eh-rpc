@@ -11,6 +11,13 @@
     <name>rpc-simple-server Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>3.2.12.RELEASE</version>
+        </dependency>
+
         <dependency>
             <groupId>cn.echoes</groupId>
             <artifactId>rpc-server</artifactId>

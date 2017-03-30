@@ -30,6 +30,13 @@
             <version>3.2.12.RELEASE</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>3.2.12.RELEASE</version>
+        </dependency>
+
         <dependency>
             <groupId>cn.echoes</groupId>
             <artifactId>rpc-client</artifactId>
