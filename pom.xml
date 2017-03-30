@@ -11,6 +11,9 @@
     <module>rpc-registry</module>
     <module>rpc-client</module>
     <module>rpc-client</module>
+      <module>rpc-interface</module>
+      <module>rpc-simple-server</module>
+    <module>rpc-simple-client</module>
   </modules>
   <packaging>pom</packaging>
 
