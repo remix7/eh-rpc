@@ -15,7 +15,7 @@ public class MyFetcher implements Fetcher {
     }
 
     @Override
-    public void fetchDate(FetcherCallBack callBack) {
+    public void fetchData(FetcherCallBack callBack) {
         try {
             System.out.println("调用Fetcher的正常方法");
             callBack.doDate(data);
